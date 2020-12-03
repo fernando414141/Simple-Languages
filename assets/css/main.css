@@ -3992,6 +3992,7 @@ input, select, textarea {
 		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
+		height: 100vh; /*Puede estar mal*/
 	}
 
 	body.is-mobile.landing #footer {
