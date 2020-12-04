@@ -3506,7 +3506,7 @@ input, select, textarea {
 						}
 
 							#header nav > ul > li > a.menuToggle:after {
-								background-image: url("images/bars.svg");
+								background-image: url("images/bars.png");
 								background-position: right center;
 								background-repeat: no-repeat;
 								content: '';
