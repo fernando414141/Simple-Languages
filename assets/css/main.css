@@ -2573,7 +2573,7 @@ input, select, textarea {
 			position: relative;
 			text-align: left;
 			width: 45%;
-			background-color: #fff;
+			background-color: #F8F9FA;
 			margin: 1em;
 		}
 		.features li p{
@@ -2691,15 +2691,15 @@ input, select, textarea {
 		}
 
 		.spotlight:nth-child(1) {
-			background-color: rgba(0, 0, 0, 0.075);
+			background-color:#F8F9FA;
 		}
 
 		.spotlight:nth-child(2) {
-			background-color: rgba(0, 0, 0, 0.15);
+			background-color: #fff;
 		}
 
 		.spotlight:nth-child(3) {
-			background-color: rgba(0, 0, 0, 0.225);
+			background-color: #F8F9FA;
 		}
 
 		.spotlight:nth-child(4) {
@@ -2968,7 +2968,7 @@ input, select, textarea {
 		}
 
 		.wrapper.style3 {
-			background-color: #F8F9FA;
+			background-color: #fff;
 			color: #d3d4e4;
 		}
 
