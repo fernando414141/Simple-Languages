@@ -1,83 +1,108 @@
-/*
-	Spectral by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+$(function() {
+    
+    "use strict";
+    
+    //===== Prealoder
+    
+    $(window).on('load', function(event) {
+        $('#preloader').delay(500).fadeOut(500);
+    });
+    
+    
+    //===== Mobile Menu 
+    
+    $(".navbar-toggler").on('click', function() {
+        $(this).toggleClass('active');
+    });
+    
+    $(".navbar-nav a").on('click', function() {
+        $(".navbar-toggler").removeClass('active');
+    });
+    
+    
+    //===== close navbar-collapse when a  clicked
+    
+    $(".navbar-nav a").on('click', function () {
+        $(".navbar-collapse").removeClass("show");
+    });
+    
+    
+    //===== Sticky
+    
+    $(window).on('scroll',function(event) {    
+        var scroll = $(window).scrollTop();
+        if (scroll < 10) {
+            $(".navgition").removeClass("sticky");
+        }else{
+            $(".navgition").addClass("sticky");
+        }
+    });
+    
+    
+    //===== Section Menu Active
+    
+    var scrollLink = $('.page-scroll');
+        // Active link switching
+        $(window).scroll(function() {
+        var scrollbarLocation = $(this).scrollTop();
 
-(function($) {
+        scrollLink.each(function() {
 
-	var	$window = $(window),
-		$body = $('body'),
-		$wrapper = $('#page-wrapper'),
-		$banner = $('#banner'),
-		$header = $('#header');
+          var sectionOffset = $(this.hash).offset().top - 90;
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
-
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
-
-	// Mobile?
-		if (browser.mobile)
-			$body.addClass('is-mobile');
-		else {
-
-			breakpoints.on('>medium', function() {
-				$body.removeClass('is-mobile');
-			});
-
-			breakpoints.on('<=medium', function() {
-				$body.addClass('is-mobile');
-			});
-
-		}
-
-	// Scrolly.
-		$('.scrolly')
-			.scrolly({
-				speed: 1500,
-				offset: $header.outerHeight()
-			});
-
-	// Menu.
-		$('#menu')
-			.append('<a href="#menu" class="close"></a>')
-			.appendTo($body)
-			.panel({
-				delay: 500,
-				hideOnClick: true,
-				hideOnSwipe: true,
-				resetScroll: true,
-				resetForms: true,
-				side: 'right',
-				target: $body,
-				visibleClass: 'is-menu-visible'
-			});
-
-	// Header.
-		if ($banner.length > 0
-		&&	$header.hasClass('alt')) {
-
-			$window.on('resize', function() { $window.trigger('scroll'); });
-
-			$banner.scrollex({
-				bottom:		$header.outerHeight() + 1,
-				terminate:	function() { $header.removeClass('alt'); },
-				enter:		function() { $header.addClass('alt'); },
-				leave:		function() { $header.removeClass('alt'); }
-			});
-
-		}
-
-})(jQuery);
+          if ( sectionOffset <= scrollbarLocation ) {
+            $(this).parent().addClass('active');
+            $(this).parent().siblings().removeClass('active');
+          }
+        });
+    });
+    
+    
+    //====== Magnific Popup
+    
+    $('.video-popup').magnificPopup({
+        type: 'iframe'
+        // other options
+    });
+    
+    
+    //===== Back to top
+    
+    // Show or hide the sticky footer button
+    $(window).on('scroll', function(event) {
+        if($(this).scrollTop() > 600){
+            $('.back-to-top').fadeIn(200)
+        } else{
+            $('.back-to-top').fadeOut(200)
+        }
+    });
+    
+    
+    //Animate the scroll to yop
+    $('.back-to-top').on('click', function(event) {
+        event.preventDefault();
+        
+        $('html, body').animate({
+            scrollTop: 0,
+        }, 1500);
+    });
+    
+    
+    //===== 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+});
