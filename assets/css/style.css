@@ -757,6 +757,15 @@ p {
         background-color: #14171a;
         color: #fff; }
 
+
+.language a{
+  color: #333333; 
+}
+.language a:hover{
+  color: #111;
+  text-decoration: underline; 
+}
+
 /*===========================
     6.CALL TO ACTION css 
 ===========================*/
