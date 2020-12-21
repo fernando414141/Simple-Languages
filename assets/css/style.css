@@ -760,6 +760,7 @@ p {
 
 .language a{
   color: #333333; 
+  font-size: larger;
 }
 .language a:hover{
   color: #111;
